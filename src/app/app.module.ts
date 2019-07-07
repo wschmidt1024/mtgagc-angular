@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { CardListModule } from './card-list/card-list.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
 	declarations: [
@@ -21,7 +22,8 @@ import { CardListModule } from './card-list/card-list.module';
 			{ path: '**', redirectTo: '', pathMatch: 'full' }
 		]),
 		AppRoutingModule,
-		CardListModule
+		CardListModule,
+		AdminModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
