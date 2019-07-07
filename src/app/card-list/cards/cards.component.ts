@@ -16,8 +16,39 @@ export class CardsComponent implements OnInit {
 		this.cardRepository.GetCards()
 			.subscribe(response =>
 			{
+				console.log("cards.component: Get Cards");
+				console.log(response);
 				this.cards = response as Card[];
 			});
+
+		this.cardRepository.GetCardById(1)
+			.subscribe(response => {
+				console.log("cards.component: Get Card By ID");
+				console.log(response);
+			});
+
+		var updatedCard: Card = new Card();
+		updatedCard.Id = 1;
+		updatedCard.Name = "Updated Title from Angular";
+		this.cardRepository.UpdateCard(updatedCard)
+			.subscribe(response => {
+				console.log("cards.component: Update Card");
+				console.log(response);
+			});
+
+		// var newCard: Card = new Card();
+		// newCard.Name = "Hard-coded Title from Angular";
+		// this.cardRepository.CreateCard(newCard)
+		// 	.subscribe(response => {
+		// 		console.log("cards.component: Create Card");
+		// 		console.log(response);
+		// 	});
+
+		// this.cardRepository.DeleteCardById(14)
+		// 	.subscribe(response => {
+		// 		console.log("cards.component: Delete Card By Id");
+		// 		console.log(response);
+		// 	});
 	}
 
 }
