@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AdminHomeComponent } from './admin-home.component';
@@ -9,7 +10,8 @@ import { EditCardComponent } from './card-list/edit-card/edit-card.component';
 @NgModule({
   declarations: [AdminHomeComponent, AdminCardListComponent, EditCardComponent, AddCardComponent],
   imports: [
-    CommonModule,
+	CommonModule,
+	FormsModule,
 	RouterModule.forChild([
 		{ path: 'admin', component: AdminHomeComponent },
 		{ path: 'admin/cards', component: AdminCardListComponent },

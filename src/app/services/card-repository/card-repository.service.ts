@@ -46,7 +46,7 @@ export class CardRepositoryService {
 				'Content-Type': 'application/json'
 			})
 		};
-		return this.httpClient.put<Card>(`${this.apiUrl}cards/${card.Id}`, card, httpOptions)
+		return this.httpClient.put<Card>(`${this.apiUrl}cards/${card.id}`, card, httpOptions)
 			.pipe(
 				catchError(this.handleError<any>('UpdateCard'))
 			);
